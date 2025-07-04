@@ -5,7 +5,7 @@ const SectionView2 = ({ sections }) => {
   const renderChild = (item, index) => {
     return (
       <View key={index} style={styles.colum}>
-        <Text style={styles.titleChild}>{item.time}</Text>
+        <Text style={styles.titleChild}>{item.titleCon}</Text>
         <Text style={styles.contentChild}>{item.description}</Text>
       </View>
     );

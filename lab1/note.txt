@@ -3,10 +3,6 @@ import { SafeAreaView, View, StyleSheet, ScrollView } from 'react-native';
 import Header from './components/HeaderCustom';
 import SectionView from './components/SectionView';
 import SectionView2 from './components/SectionView2';
-import TextInputCustom from './components/TextInputCustom';
-import { ThemeProvider } from './components/ChoThem/Theme';
-import RegistrationScreen from './screens/RegistrationScreen';
-import ChoThemCustom from './components/ChoThemCustom';
 
 const backIcon = require('./assets/back.png');
 const userIcon = require('./assets/user.png');
@@ -34,13 +30,10 @@ const eventInfo = [
   },
 ];
 
-
-
 function App(): React.JSX.Element {
   return (
-    <ThemeProvider>
-      <SafeAreaView style={styles.container}>
-        <ScrollView>
+    <SafeAreaView style={styles.container}>
+      <ScrollView>
         <View>
         <Header 
           title="Header" 
@@ -83,18 +76,8 @@ function App(): React.JSX.Element {
       <View>
         <SectionView2 sections={eventInfo} />
       </View>
-      <View style={{padding: 10}}>
-        <TextInputCustom title="Title" placeholder="Placeholder" required />
-        <TextInputCustom title="Title" placeholder="Placeholder" required isFocus />
-        <TextInputCustom title="Title" placeholder="Placeholder" required />
-        <TextInputCustom title="Title" placeholder="Placeholder" required error="Error" description="Description" />
-      </View>
-
-      <RegistrationScreen />
-
       </ScrollView>
     </SafeAreaView>
-   </ThemeProvider>
   );
 }
 
