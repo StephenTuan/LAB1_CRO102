@@ -1,10 +1,11 @@
 import React from 'react';
-import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, Text,ScrollView } from 'react-native';
 import { useTheme } from '../components/ChoThem/Theme';
 import Block from '../components/ChoThem/Block';
 import Banner from '../components/ChoThem/Banner';
-import Buttonn from '../components/ChoThem/Buttonnn';
+import Buttonnn from '../components/ChoThem/Buttonnn';
 import ThemedTextInput from '../components/ChoThem/TextInput';
+
 
 const getStyles = (theme) => StyleSheet.create({
   container: {
@@ -36,7 +37,8 @@ const RegistrationScreen = () => {
   const themedStyles = getStyles(theme);
 
   return (
-    <View style={themedStyles.container}>
+    <ScrollView>
+      <View style={themedStyles.container}>
       <Block title="Thông tin cá nhân">
         <ThemedTextInput placeholder="Họ và tên" />
         <ThemedTextInput placeholder="Email" />
@@ -53,11 +55,12 @@ const RegistrationScreen = () => {
         <ThemedTextInput placeholder="Quốc gia" />
       </Block>
       <Banner imageUrl={'https://reactnative.dev/img/logo-og.png'}/>
-      <Buttonn>Đăng ký</Buttonn>
+      <Buttonnn  />
       <TouchableOpacity onPress={toggleTheme} style={themedStyles.themeButton}>
         <Text style={themedStyles.themeButtonText}>Switch to {theme.dark ? 'Light' : 'Dark'} Mode</Text>
       </TouchableOpacity>
     </View>
+    </ScrollView>
   );
 };
 
